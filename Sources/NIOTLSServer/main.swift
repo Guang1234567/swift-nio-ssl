@@ -46,7 +46,7 @@ let bootstrap = ServerBootstrap(group: group)
     }
 
     // Enable TCP_NODELAY and SO_REUSEADDR for the accepted Channels
-    .childChannelOption(ChannelOptions.socket(IPPROTO_TCP, TCP_NODELAY), value: 1)
+    .childChannelOption(ChannelOptions.socket(SocketOptionLevel(IPPROTO_TCP), TCP_NODELAY), value: 1)
     .childChannelOption(ChannelOptions.socket(SocketOptionLevel(SOL_SOCKET), SO_REUSEADDR), value: 1)
 
 defer {
